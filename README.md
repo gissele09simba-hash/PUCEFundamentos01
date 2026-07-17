@@ -1,32 +1,35 @@
-# PUCEFundamentos01
-## 🚀 Taller Autónomo - Operación Código Legacy
+## Sistema de Matricula - PUCE TEC
 
-Bienvenidos a su primer reto de mantenimiento de software. En el mundo real, rara vez crearán sistemas desde cero; la mayor parte del tiempo heredarán código escrito por otras personas, a menudo sin documentación, con nombres confusos y errores ocultos.
+## Descripción
+Este proyecto consiste en un sistema de matrícula desarrollado en Java para simular el proceso de inscripción de estudiantes de la carrera de Desarrollo de Software.
 
-Hoy asumen el rol de **Analistas de Desarrollo**. El departamento de TI del PUCE TEC les ha entregado el módulo beta de validación de matrículas escrito en Java 25. El programador anterior fue reasignado y dejó el trabajo a medias.
+## Integrantes
+- Sophia Mendoza
+- Angie Simba
 
-El sistema compila, pero tiene fallos estructurales graves. Su objetivo es entenderlo, arreglarlo y mejorarlo.
+## Funcionamiento del Sistema
+El programa solicita al usuario indicar si es un estudiante de reingreso o de primer semestre.
 
----
+Si el estudiante es de reingreso, el sistema registra la nota obtenida en la asignatura "Fundamentos de Programación". Posteriormente, se pregunta si desea solicitar el cupo para la materia "Estructuras de Datos".
 
-### Misión de la Semana (Trabajo en Grupos)
+El sistema valida si el estudiante posee el prerrequisito y si obtuvo una calificación mínima de 7.0. Dependiendo del resultado de la validación, la matrícula puede ser aprobada o rechazada.
 
-### Fase 1: Ingeniería Inversa
-* **Clonen** este repositorio y creen una rama (`branch`) con el nombre de su grupo.
-* **Lean** el código línea por línea. Usen herramientas de IA si lo necesitan, pero *solo para entender*, no para reescribir.
-* **Expliquen** en el archivo `README.md` de forma clara y objetiva qué problema resuelve esta aplicación y describan el flujo de datos.
+Asimismo, si el estudiante obtuvo una calificación perfecta de 10.0 en la materia prerrequisito, el sistema muestra un mensaje especial indicando que ha sido seleccionado como Tutor de Programación del PUCE TEC.
 
-### Fase 2: Refactorización y Debugging
-* **Nombres vagos:** El código está lleno de variables como `usr`, `m1`, `n1`, `p1`. Renómbrenlas usando las buenas prácticas de la industria para que el código sea legible.
-* **El Bug Oculto:** Si ejecutan el programa y registran a un estudiante nuevo (que no es de reingreso), el sistema colapsa abruptamente al evaluar la materia destino. Encuentren la línea exacta que causa la excepción, entiendan por qué ocurre lógicamente y apliquen la solución en el código.
+## Flujo de datos
+1. El usuario indica si es estudiante de reingreso o de primer semestre.
+2. Si es de reingreso, ingresa la nota obtenida en "Fundamentos de Programación".
+3. El usuario decide si desea solicitar el cupo para "Estructuras de Datos".
+4. El sistema verifica el historial académico y la nota del prerrequisito.
+5. Finalmente, se genera el resultado de la matrícula.
 
-### Fase 3: Nueva Funcionalidad (Requerimiento del Cliente)
-Dirección Académica ha solicitado un cambio urgente en la regla de negocio:
+## Problemas Encontrados en el Código Legacy
+- Existían nombres de variables poco descriptivos, lo que dificultaba la comprensión del código.
+- El sistema presentaba un error al intentar evaluar estudiantes nuevos, debido a que el historial de materias podía tener un valor nulo, generando una excepción NullPointerException.
+- La nueva regla de negocio para la selección de tutores no estaba implementada.
 
-> Si un estudiante aprueba el prerrequisito con una calificación perfecta de **10.0**, el sistema no solo debe aprobar la matrícula, sino imprimir el siguiente mensaje destacado: *"¡Felicidades! Ha sido seleccionado como Tutor de Programación del PUCE TEC para este semestre."*
-
----
-
-### Entregables Finales
-* **Pull Request:** Suban sus cambios a GitHub y abran un *Pull Request* hacia el repositorio original. Se evaluará el historial de commits para validar el trabajo en equipo.
-* **Video de Defensa Técnica (Máximo 3 minutos):** Incluyan el enlace al video en la descripción de su Pull Request. En la grabación deben demostrar la aplicación funcionando sin errores en la terminal, explicar dónde estaba el error oculto y cómo lo solucionaron, y mostrar el código refactorizado con la nueva funcionalidad implementada.
+## Mejoras Implementadas
+- Se refactorizaron los nombres de las variables para mejorar la legibilidad del código.
+- Se corrigió el error `NullPointerException` validando que el historial de materias no sea nulo antes de recorrerlo.
+- Se implementó el uso de `Scanner` para la lectura de datos desde la consola.
+- Se añadió la funcionalidad que selecciona como Tutor de Programación a los estudiantes que obtengan una nota perfecta de 10.0.
