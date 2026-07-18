@@ -16,7 +16,7 @@ El sistema valida si el estudiante posee el prerrequisito y si obtuvo una califi
 
 Asimismo, si el estudiante obtuvo una calificación perfecta de 10.0 en la materia prerrequisito, el sistema muestra un mensaje especial indicando que ha sido seleccionado como Tutor de Programación del PUCE TEC.
 
-## Flujo de datos
+## 
 1. El usuario indica si es estudiante de reingreso o de primer semestre.
 2. Si es de reingreso, ingresa la nota obtenida en "Fundamentos de Programación".
 3. El usuario decide si desea solicitar el cupo para "Estructuras de Datos".
