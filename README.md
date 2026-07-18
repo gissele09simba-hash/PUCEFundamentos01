@@ -28,6 +28,14 @@ Asimismo, si el estudiante obtuvo una calificación perfecta de 10.0 en la mater
 - El sistema presentaba un error al intentar evaluar estudiantes nuevos, debido a que el historial de materias podía tener un valor nulo, generando una excepción NullPointerException.
 - La nueva regla de negocio para la selección de tutores no estaba implementada.
 
+## Error Oculto Encontrado y Solución
+El error oculto se presentaba cuando un estudiante nuevo (primer semestre) intentaba solicitar una materia.
+
+El problema se encontraba en la validación del historial académico, específicamente al intentar recorrer el arreglo:
+
+```java
+for (int i = 0; i < h_materias.length; i++)
+
 ## Mejoras Implementadas
 - Se refactorizaron los nombres de las variables para mejorar la legibilidad del código.
 - Se corrigió el error `NullPointerException` validando que el historial de materias no sea nulo antes de recorrerlo.
